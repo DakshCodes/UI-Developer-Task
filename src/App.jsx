@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <div id='main'>
-      {loading && <PreLoader />}
+      {/* {loading && <PreLoader />} */}
       {/* SideNav Is Fixed */}
       <Sidenav />
       

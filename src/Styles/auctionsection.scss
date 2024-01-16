@@ -18,6 +18,7 @@
         .auction-title {
             color: $white;
             font-size: 1vmax;
+
         }
 
         .auction-arrow {
@@ -41,13 +42,13 @@
         gap: 2.3rem;
 
         .aution-card:nth-of-type(2) {
-            background-image: url(/src/assets/icons/img2.png);
+            background-image: url(https://res.cloudinary.com/dylnk52kz/image/upload/v1705382475/image_343_xlinxh.png);
             background-size: cover;
             background-repeat: no-repeat;
         }
 
         .aution-card {
-            background-image: url(/src/assets/icons/img1.png);
+            background-image: url(https://res.cloudinary.com/dylnk52kz/image/upload/v1705382475/image_342_zg3xwl.png);
             background-size: cover;
             background-repeat: no-repeat;
             width: 450px;
@@ -156,5 +157,100 @@
 
         }
 
+    }
+
+    @media (max-width:900px) {
+
+        .auction-head {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+
+            .auction-title {
+                font-size: 1.7vmax;
+
+            }
+            .auction-arrow {
+                font-size: 1rem;
+            }
+        }
+
+
+    }
+
+    @media (max-width:580px) {
+        .auction-cards {
+            justify-content: center;
+            gap: 3rem;
+
+            .aution-card {
+                width: 45vmax;
+                height: 35vmax;
+
+                .auction-time {
+                    gap: 4rem;
+                    .dates {
+                        display: flex;
+                        flex-direction: column;
+                        color: $white;
+                        letter-spacing: 0.08em;
+                        height: 40px !important;
+                        
+                        svg{
+                            display: none;
+                        }
+                    }
+
+                    .dates:nth-of-type(1) {
+                        span:nth-of-type(1) {
+                            font-size: 12px;
+                        }
+
+                        span:nth-of-type(2) {
+                            font-size: 10px;
+                        }
+                    }
+
+                    .dates:nth-of-type(2) {
+                        font-size: 10px;
+
+                        span:nth-of-type(1) {
+                            font-size: 12px;
+                        }
+
+                        span:nth-of-type(2) {
+                            font-size: 10px;
+                        }
+                    }
+                }
+
+                .auction-btn {
+                    font-size: 16px;
+
+                }
+
+            }
+
+        }
+    }
+    @media (max-width:360px) {
+        .auction-cards {
+            justify-content: center;
+
+            .aution-card {
+                width: 35vmax;
+                height: 25vmax;
+
+                .auction-time {
+                    gap: 3rem;
+                    .dates {
+                        height: 50px !important;
+                    }
+
+                }
+
+            }
+
+        }
     }
 }

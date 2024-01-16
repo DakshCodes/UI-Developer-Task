@@ -1,14 +1,13 @@
 import gsap from 'gsap';
 import React, { useEffect, useLayoutEffect, useState } from 'react'
-import img1 from '../../assets/card1.png'
 
-const Slider = () => {
+const SearchSlider = () => {
 
   useEffect(() => {
-    const sliderContainer = document.querySelector("[data-slider-container]");
-    const sliderPrevBtn = document.querySelector("[data-slider-prev]");
-    const sliderNextBtn = document.querySelector("[data-slider-next]");
-    const currentSlider = document.querySelector("[data-slider]");
+    const sliderContainer = document.querySelector("[data-slider-container-2]");
+    const sliderPrevBtn = document.querySelector("[data-slider-prev-2]");
+    const sliderNextBtn = document.querySelector("[data-slider-next-2]");
+    const currentSlider = document.querySelector("[data-slider-2]");
 
     const totalSliderVisibleItems = Number(getComputedStyle(currentSlider).getPropertyValue("--slider-items"));
 
@@ -149,8 +148,8 @@ const Slider = () => {
   ]
 
   return (
-    <div className="slider card-slider" data-slider >
-      <div className="slider-container" data-slider-container>
+    <div className="slider card-slider" data-slider-2 >
+      <div className="slider-container" data-slider-container-2>
         {
           sliderdata.map((card, index) => (
             <div className="slider-item" key={index}>
@@ -182,11 +181,11 @@ const Slider = () => {
         }
 
       </div>
-      <button className="btn-icon slider-control prev" data-slider-prev>
+      <button className="btn-icon slider-control prev" data-slider-prev-2>
         <svg height={40} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier" strokeWidth={0} /><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" /><g id="SVGRepo_iconCarrier"> <path d="M14.9991 19L9.83911 14C9.56672 13.7429 9.34974 13.433 9.20142 13.0891C9.0531 12.7452 8.97656 12.3745 8.97656 12C8.97656 11.6255 9.0531 11.2548 9.20142 10.9109C9.34974 10.567 9.56672 10.2571 9.83911 10L14.9991 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /> </g></svg>
       </button>
 
-      <button className="btn-icon slider-control next" data-slider-next>
+      <button className="btn-icon slider-control next" data-slider-next-2>
         <svg height={40} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" stroke="#fff"><g id="SVGRepo_bgCarrier" strokeWidth={0} /><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" /><g id="SVGRepo_iconCarrier"> <path d="M14.9991 19L9.83911 14C9.56672 13.7429 9.34974 13.433 9.20142 13.0891C9.0531 12.7452 8.97656 12.3745 8.97656 12C8.97656 11.6255 9.0531 11.2548 9.20142 10.9109C9.34974 10.567 9.56672 10.2571 9.83911 10L14.9991 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /> </g></svg>
       </button>
 
@@ -194,4 +193,4 @@ const Slider = () => {
   )
 }
 
-export default Slider
+export default SearchSlider

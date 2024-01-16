@@ -27,7 +27,7 @@ body {
   background-color: #080B2A;
 }
 
-#main{
+#main {
   display: flex;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -51,6 +51,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  @media (max-width:880px) {
+    height: max-content;
+    padding: 15px 15px;
+  }
 
   #dot {
     position: absolute;

@@ -85,14 +85,14 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            
+
             img {
                 height: 60px;
                 width: 60px;
                 object-fit: cover;
                 border-radius: 12px;
             }
-            
+
             .profile-info {
                 display: flex;
                 flex-direction: column;
@@ -145,6 +145,9 @@
 
 .img-holder {
     border-radius: 8px;
+    border-top: 1px solid #2E409C;
+    border-left: 1px solid #2E409C;
+    border-bottom: 1px solid #2e409ca8;
     height: 291px;
     width: 284.95px;
     overflow: hidden;

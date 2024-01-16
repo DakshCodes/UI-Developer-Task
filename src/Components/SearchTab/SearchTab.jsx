@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Slider from '../Slider/Slider';
+import SearchSlider from '../SearchSlider';
 
 const SearchTab = () => {
     const [activeTab, setActiveTab] = useState(1);
@@ -42,8 +42,8 @@ const SearchTab = () => {
                             key={tabNumber}
                             className={`tab-content ${activeTab === tabNumber ? 'active' : ''}`}
                         >
-                            <Slider />
-                            <Slider />
+                            <SearchSlider />
+                            {/* <Slider /> */}
                         </div>
                     ))}
                 </div>

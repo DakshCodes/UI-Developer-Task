@@ -1,5 +1,6 @@
 @import "./statics.scss";
 
+
 .wallet-card {
     width: 420px;
     height: 305px;
@@ -29,7 +30,7 @@
             color: $white;
             font-family: $font2;
             font-weight: 700;
-            font-size: 1.5vmax;
+            font-size: 1.5rem;
         }
 
         .blnc-numbers {
@@ -37,7 +38,7 @@
             font-family: $font3;
             letter-spacing: 0.05em;
             font-weight: 700;
-            font-size: 1vmax;
+            font-size: 1rem;
             margin-top: 0.3rem;
 
             p {
@@ -49,7 +50,7 @@
 
             span {
                 font-weight: 600;
-                font-size: 1.9vmax;
+                font-size: 1.3rem;
             }
         }
 
@@ -203,6 +204,57 @@
                     align-items: center;
                     border-radius: 50%;
                     background-color: #ff595924;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:580px) {
+
+    .wallet-card {
+        width: 45vmax;
+        height: 45vmax;
+        gap: 2rem;
+
+        .walletbox-1 {
+            gap: 1.2rem;
+        }
+
+        .walletbox-2 {
+            .earinings {
+                gap: 0.9rem;
+
+                .earn-head {
+                    gap: 0.8rem;
+
+                }
+
+                .spend {
+                    font-size: 1.8vmax;
+
+                    span {
+                        font-size: 1.5vmax;
+                    }
+                }
+
+            }
+
+            .spendings {
+                gap: 0.9rem;
+
+
+                .spend {
+                    font-size: 1.8vmax;
+
+                    span {
+                        font-size: 1.5vmax;
+                    }
+                }
+
+                .earn-head {
+                    gap: 0.8rem;
+
                 }
             }
         }

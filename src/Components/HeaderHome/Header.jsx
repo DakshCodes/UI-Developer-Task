@@ -77,7 +77,7 @@ const Header = () => {
                 </ChipLayout>
                 <ChipLayout>
                     <p className='chip-content'>
-                        Collect
+                    Collect
                     </p>
                 </ChipLayout>
             </div>

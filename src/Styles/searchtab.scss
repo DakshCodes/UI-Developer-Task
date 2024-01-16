@@ -3,8 +3,9 @@
 .search-tab-main {
     display: flex;
     flex-direction: column;
-
+    
     .selecte-tabs {
+        // width: max-content;
         display: flex;
         flex-direction: column;
         margin-top: 15px;
@@ -34,6 +35,8 @@
         display: flex;
         justify-content: start;
         gap: 0.7rem;
+        overflow-y: auto;
+        width: 100%;
     }
 
     input {

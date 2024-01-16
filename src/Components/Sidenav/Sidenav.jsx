@@ -83,7 +83,7 @@ const Sidenav = () => {
   }, [])
 
   return (
-    <div ref={container} className='sidenav-main'>
+    <div ref={container} className={`sidenav-main `} >
       <div className="logo">
         <img src={logo} alt="" />
         {/* <span>1</span><span>0</span> */}

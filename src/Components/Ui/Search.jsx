@@ -4,7 +4,7 @@ const Search = () => {
 
     return (
         <>
-            <form autoComplete="off">
+            <form autoComplete="off" className='search-main'>
                 <div className="finder">
                     <div className="finder__outer">
                         <div className="finder__inner">

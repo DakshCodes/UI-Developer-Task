@@ -14,8 +14,15 @@
     flex-direction: column;
     align-items: center;
     padding: 14px 0;
-    gap: 20px;
-    height: max-content;
+    gap: 25px;
+    height: 100%;
+
+    @media (max-width:800px) {
+        margin: 0px 0 0px 8px;
+    }
+
+
+
     .logo {
         display: flex;
         align-items: center;
@@ -51,13 +58,13 @@
     }
 
     .side-items {
-        height: 100%;
+        height: max-content;
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: start;
-        gap: 1.5rem;
+        gap: 2rem;
 
         .active {
             position: relative;
@@ -96,16 +103,34 @@
 
         .breaker {
             display: block;
-            background-color: #2e357b;
-            width: 100%;
+            background: linear-gradient(to right, #2BC0E4, #EAECC6);
+            width: 56px;
+            border-radius: 16px;
             height: 2px;
-            margin: 8px  0;
+            margin: 8px 0;
         }
 
     }
-    .side-exit{
+
+    .side-exit {
+        height: max-content;
         cursor: pointer;
-        margin-top: 3rem;
+        margin-top: 8rem;
+    }
+
+
+    @media (max-width:470px) {
+        // display: none;
+        flex-basis: 60px;
+        max-width: 60px;
+
+        .side-items {
+            gap: 1.5rem;
+        }
+
+        .side-exit {
+            margin-top: 2rem;
+        }
     }
 
 }

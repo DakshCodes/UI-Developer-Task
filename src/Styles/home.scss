@@ -8,8 +8,13 @@
         justify-content: space-between;
         gap: 1rem;
         padding: 2rem 0;
+        
+        @media (max-width:600px) {
+            justify-content: center;
+        }
     }
     .tabs-section {
+        overflow: hidden;
         // display: flex;
         // flex-wrap: wrap;
         // align-items: center;
