@@ -1,7 +1,47 @@
-import React from 'react'
+import gsap from 'gsap'
+import React, { useLayoutEffect } from 'react'
 import AuctionCard from '../Ui/AuctionCard'
 
 const AuctionSection = () => {
+    useLayoutEffect(() => {
+        const context = gsap.context(() => {
+
+            gsap.set(".auction-cards .aution-card", {
+                opacity: 0,
+                y: 10,
+            })
+            gsap.set(".wallet-card ", {
+                opacity: 0,
+                y: 10,
+            })
+            const tl = gsap.timeline();
+            tl.from(".auction-head .auction-title", {
+                opacity: 0,
+                y: 10,
+                duration: 0.2,
+                delay: 3,
+                ease: 'sine.out',
+            }).from(".auction-head .auction-arrow", {
+                opacity: 0,
+                x: 10,
+                duration: 0.2,
+                ease: 'sine.out',
+            }).to(".auction-cards .aution-card", {
+                opacity: 1,
+                y: 0,
+                stagger: 0.1,
+                duration: 0.1,
+                ease: 'sine.out',
+            }).to(".wallet-card ", {
+                opacity: 1,
+                y: 0,
+                stagger: 0.1,
+                duration: 0.1,
+                ease: 'sine.out',
+            })
+        })
+        return () => context.revert();
+    }, [])
     return (
         <div className='aution-main'>
             <div className="auction-head">
