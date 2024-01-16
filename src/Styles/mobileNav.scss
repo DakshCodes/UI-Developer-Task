@@ -1,27 +1,28 @@
 @import "./statics.scss";
 
-.sidenav-main {
-    position: sticky;
+.mobilenav-main {
+    position: fixed;
     top: 0%;
     left: 0%;
-    flex-basis: 72px;
-    border-radius: 16px;
-    max-width: 72px;
+    flex-basis: 90px;
+    max-width: 90px;
     flex-shrink: 0;
-    margin: 25px 0 25px 25px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #000;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 14px 0;
-    gap: 25px;
-    height: 100%;
+    padding: 40px 0;
+    gap: 10px;
+    height: 100vh;
+    z-index: 999;
 
-    @media (max-width:800px) {
-        margin: 0px 0 0px 8px;
+    .cross-nav{
+        position: absolute;
+        right: 0%;
+        top: 0%;
+        z-index: 99;
+        transform: translate(0%,0%);
     }
-
-
 
     .logo {
         display: flex;
@@ -29,32 +30,10 @@
         justify-content: center;
 
         img {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
+            height: 90%;
+            width: 90%;
+            object-fit: cover;
         }
-
-        // span {
-        //     position: relative;
-        //     font-size: 2.4rem;
-        //     color: $white;
-        //     font-family: $font1;
-        //     font-weight: 600;
-        //     color: $white;
-        //     text-shadow:
-        //         0 0 6px $white,
-        // }
-
-        // span:nth-of-type(2)::before {
-        //     position: absolute;
-        //     left: -25%;
-        //     bottom: 22%;
-        //     content: "";
-        //     height: 5px;
-        //     width: 4.8px;
-        //     background-color: #8890c7;
-        //     border-radius: 100%;
-        // }
     }
 
     .side-items {
@@ -115,24 +94,12 @@
     .side-exit {
         height: max-content;
         cursor: pointer;
-        margin-top: 8rem;
+        margin-top: 2rem;
     }
 
 
-    @media (max-width:470px) {
-        z-index: 99;
+    @media (min-width:470px) {
         display: none !important;
-        margin: 0px 0 0px 0px;
-        border-radius: 0%;
-        height: 100vh;
-
-        .side-items {
-            gap: 1.5rem;
-        }
-
-        .side-exit {
-            margin-top: 1rem;
-        }
     }
 
 }

@@ -164,6 +164,7 @@
         .auction-head {
             flex-wrap: wrap;
             justify-content: center;
+            text-align: center;
             gap: 1rem;
 
             .auction-title {
@@ -181,7 +182,7 @@
     @media (max-width:580px) {
         .auction-cards {
             justify-content: center;
-            gap: 3rem;
+            gap: 4rem;
 
             .aution-card {
                 width: 45vmax;

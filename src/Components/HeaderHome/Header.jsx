@@ -3,7 +3,7 @@ import React, { useLayoutEffect } from 'react'
 import ChipLayout from '../../Layouts/ChipLayout/ChipLayout'
 import Search from '../Ui/Search'
 
-const Header = () => {
+const Header = ({ setmobileNavActive, mobileNavActive }) => {
     useLayoutEffect(() => {
         const context = gsap.context(() => {
             const tl = gsap.timeline();
@@ -77,11 +77,11 @@ const Header = () => {
                 </ChipLayout>
                 <ChipLayout>
                     <p className='chip-content'>
-                    Collect
+                        Collect
                     </p>
                 </ChipLayout>
             </div>
-            <div className="card">
+            <div className="card"  onClick={() => setmobileNavActive(prev => !prev)}>
                 <div className="img" />
                 <div className="textBox">
                     <div className="textContent">

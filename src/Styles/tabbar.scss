@@ -77,4 +77,7 @@ $background-color_2: #fff;
     height: 2px;
     background-color: #2E409C;
     background: linear-gradient(to right,#2D3F9A , #2d3f9a05);
+    @media (max-width:700px) {
+        margin-top: 0.9rem; 
+    }
 }

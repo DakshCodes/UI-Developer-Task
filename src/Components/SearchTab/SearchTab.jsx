@@ -26,11 +26,11 @@ const SearchTab = () => {
                             <label htmlFor={`tabToggle0${tabNumber}`}>
                                 {tabNumber === 1 && 'All'}
                                 {tabNumber === 2 && 'Music'}
-                                {tabNumber === 3 && '3D Abstract'}
+                                {tabNumber === 3 && 'Abstract'}
                                 {tabNumber === 4 && 'Game'}
                                 {tabNumber === 5 && 'Sports'}
                                 {tabNumber === 6 && 'Cartoon'}
-                                {tabNumber === 7 && 'Virtual World'}
+                                {tabNumber === 7 && 'Virtual'}
                                 {tabNumber === 8 && 'Classic'}
                             </label>
                         </React.Fragment>

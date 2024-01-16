@@ -1,6 +1,8 @@
 @import "./statics.scss";
 
 
+
+
 .wallet-card {
     width: 420px;
     height: 305px;
@@ -211,11 +213,15 @@
 }
 
 @media (max-width:580px) {
+    .aution-main:nth-of-type(2) {
+        margin-top: 5rem;
+    }
 
     .wallet-card {
-        width: 45vmax;
-        height: 45vmax;
-        gap: 2rem;
+        width: max-content;
+        padding-bottom: 15px;
+        height: max-content;
+        gap: 1.5rem;
 
         .walletbox-1 {
             gap: 1.2rem;

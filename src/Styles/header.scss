@@ -40,6 +40,11 @@
         flex-wrap: wrap;
         gap: 0.9rem;
 
+        @media (max-width:700px) {
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
         @media (max-width:470px) {
             gap: 0.4rem;
             font-size: 12px;
@@ -63,7 +68,7 @@
         flex-wrap: wrap;
         transition: 0.5s ease-in-out;
         padding-left: 8px;
-
+        background-color: #93c4fd07;
     }
 
     .img {
@@ -110,8 +115,21 @@
         padding-left: 10px;
     }
 
+
+
+
     @media (max-width:470px) {
         height: max-content;
+        .card {
+            animation: colorpulse 1s alternate infinite ease-in-out;
+            border-radius: 12px;
+        }
+
+
+        .arrow {
+            padding-left: 10px;
+            animation: updown 0.8s alternate infinite ease-in-out;
+        }
 
         .img {
             width: 45px;
@@ -135,4 +153,24 @@
     }
 
 
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(2px);
+    }
+
+    100% {
+        transform: translateY(-2px);
+    }
+}
+
+@keyframes colorpulse {
+    0% {
+        background-color: #93c4fd0b;
+    }
+
+    100% {
+        background-color: #93c4fd00;
+    }
 }

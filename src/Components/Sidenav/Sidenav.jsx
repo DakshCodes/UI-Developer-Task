@@ -57,20 +57,20 @@ const Sidenav = () => {
         duration: 0.7,
         delay:2,
         ease: 'sine.out',
-      }).from(".logo", {
+      }).from(".sidenav-main .logo", {
         opacity: 0,
         x: -10,
         duration: 0.5,
         ease: 'sine.out',
         delay: -0.09
-      }).from(".side-items .side-item", {
+      }).from(".sidenav-main .side-items .side-item", {
         opacity: 0,
         x: -10,
         duration: 0.2,
         stagger: 0.06,
         ease: 'sine.out',
         delay: -0.2
-      }).from(".side-exit", {
+      }).from(".sidenav-main .side-exit", {
         opacity: 0,
         x: -10,
         duration: 0.2,

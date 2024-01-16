@@ -6,15 +6,6 @@ const PreLoader = () => {
     useLayoutEffect(() => {
         const context = gsap.context(() => {
             // Loader animations
-            gsap.to(".digit", {
-                top: "-150px",
-                stagger: {
-                    amount: 0.25,
-                },
-                delay: 6,
-                duration: 1,
-                ease: "power4.inOut",
-            });
 
             gsap.from(".loader-1", {
                 width: 0,
