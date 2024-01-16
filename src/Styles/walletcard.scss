@@ -1,0 +1,210 @@
+@import "./statics.scss";
+
+.wallet-card {
+    width: 420px;
+    height: 305px;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    background: #ffffff0a;
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(3.5px);
+    border-radius: 10px;
+    border-top: 1px solid #14befc70;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+
+    .walletbox-1 {
+        margin-top: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        height: max-content;
+
+        .blnc {
+            color: $white;
+            font-family: $font2;
+            font-weight: 700;
+            font-size: 1.5vmax;
+        }
+
+        .blnc-numbers {
+            color: $white;
+            font-family: $font3;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            font-size: 1vmax;
+            margin-top: 0.3rem;
+
+            p {
+                height: max-content;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+            }
+
+            span {
+                font-weight: 600;
+                font-size: 1.9vmax;
+            }
+        }
+
+        .coin-dropdown {
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.6);
+            ;
+            font-family: $font2;
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 12px;
+
+            .drop-name {
+                display: flex;
+                align-items: center;
+                gap: 0.7rem;
+
+                svg {
+                    background-color: #fff;
+                    border-radius: 50%;
+                }
+
+                span {
+                    font-weight: 100;
+                    color: rgba(255, 255, 255, 0.4);
+
+                    span {
+                        color: $white;
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: #232966;
+            }
+        }
+    }
+
+    .walletbox-2 {
+        width: 100%;
+        display: flex;
+
+
+        span {
+            font-weight: 500;
+            font-family: $font2;
+            color: #A9A9A9;
+            font-size: 14px;
+        }
+
+
+        .earinings {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3rem;
+
+            .graph {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                width: 150px;
+            }
+
+            .spend {
+                margin-top: 0.7rem;
+                display: flex;
+                align-items: center;
+                font-family: $font3;
+                font-weight: 800;
+                gap: 1rem;
+                font-size: 1.5vmax;
+                color: #60FFBC;
+                letter-spacing: 0.06em;
+
+                span {
+                    font-weight: 600;
+                    font-size: 0.8vmax;
+                    color: #fff !important;
+                }
+            }
+
+            .earn-head {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+
+                div {
+                    height: 41px;
+                    width: 41px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    background-color: #0ddc8630;
+                }
+            }
+        }
+
+        .spendings {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.3rem;
+
+            .graph {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                width: 150px;
+            }
+
+            .spend {
+                display: flex;
+                align-items: center;
+                font-family: $font3;
+                font-weight: 800;
+                gap: 1rem;
+                font-size: 1.5vmax;
+                color: #FF5959;
+                letter-spacing: 0.06em;
+                margin-top: 0.7rem;
+
+                span {
+                    font-weight: 600;
+                    font-size: 0.8vmax;
+                    color: #fff !important;
+                }
+            }
+
+            .earn-head {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+
+                div {
+                    height: 41px;
+                    width: 41px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    background-color: #ff595924;
+                }
+            }
+        }
+    }
+}

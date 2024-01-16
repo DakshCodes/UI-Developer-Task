@@ -1,6 +1,7 @@
 .content-main {
-    height: 100vh;
+    height: max-content;
     flex-grow: 1;
     overflow-y: auto;
     margin-top: 25px;
+    padding: 0px 25px;
 }

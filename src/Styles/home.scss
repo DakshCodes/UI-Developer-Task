@@ -1,3 +1,27 @@
-.home-main{
-    height: 300vh;
+.home-main {
+    height: max-content;
+    
+    .popular-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 2rem 0;
+    }
+    .tabs-section {
+        // display: flex;
+        // flex-wrap: wrap;
+        // align-items: center;
+        // justify-content: space-between;
+        // gap: 1rem;
+        // padding: 2rem 0;
+        height: max-content;
+        width: 100%;
+    }
+    .search-section{
+        margin-top: 3rem;
+        height: max-content;
+        width: 100%;
+    }
 }

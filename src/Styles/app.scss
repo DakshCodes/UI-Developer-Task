@@ -4,12 +4,17 @@
 @import "./sidenav.scss";
 @import "./header.scss";
 @import "./search.scss";
+@import "./preloader.scss";
+@import "./auctionsection.scss";
+@import "./walletcard.scss";
+@import "./tabbar.scss";
+@import "./Slider.scss";
+@import "./searchtab.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -17,46 +22,45 @@
 }
 
 body {
-  background-color: #000;
+  height: 100%;
+  width: 100%;
+  background-color: #080B2A;
 }
 
-.dashboard {
-  background-image: linear-gradient(170deg, $bg 40%, #080b2b 100%, #080b2b 100%, #0c1237 100%);
-  // background-color: #080B2A;
+#main{
+  display: flex;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  height: 98vh;
-  width: 98%;
-  border-radius: 30px;
-  display: flex;
-  overflow: hidden;
-  margin: auto;
-  gap: 1.3rem;
+  background: url(/src/assets/icons/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
+
 
 .chip-main {
+  overflow: hidden;
+  cursor: pointer;
   background-color: rgba(8, 11, 42, 34%);
-  border-radius: 15px;
-  padding: 5px 15px;
+  padding: 0px 15px;
+  max-height: 56px;
   border-radius: 22px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(80px);
   display: flex;
   justify-content: center;
   align-items: center;
 
-  svg {
-    position: relative;
-
-    &::before{
-      position: absolute;
-      right: 0%;
-      top: 0%;
-      content: "";
-      height: 10px;
-      width: 10px;
-      background-color: red;
-    }
+  #dot {
+    position: absolute;
+    left: 62%;
+    top: 33%;
+    transform: translate(-50%, -50%);
+    content: "";
+    height: 7.5px;
+    width: 7.5px;
+    border-radius: 50%;
+    background-color: #EC008C;
   }
 }
