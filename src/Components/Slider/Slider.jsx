@@ -1,97 +1,99 @@
 import gsap from 'gsap';
-import React, { useEffect, useLayoutEffect, useState } from 'react'
-import img1 from '../../assets/card1.png'
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 
 const Slider = () => {
+  const sliderContainerRef = useRef(null);
+  const sliderPrevBtnRef = useRef(null);
+  const sliderNextBtnRef = useRef(null);
+  const currentSliderRef = useRef(null);
 
   useEffect(() => {
-    const sliderContainer = document.querySelector("[data-slider-container]");
-    const sliderPrevBtn = document.querySelector("[data-slider-prev]");
-    const sliderNextBtn = document.querySelector("[data-slider-next]");
-    const currentSlider = document.querySelector("[data-slider]");
+    const sliderContainer = sliderContainerRef.current;
+    const sliderPrevBtn = sliderPrevBtnRef.current;
+    const sliderNextBtn = sliderNextBtnRef.current;
+    const currentSlider = currentSliderRef.current;
 
     const totalSliderVisibleItems = Number(getComputedStyle(currentSlider).getPropertyValue("--slider-items"));
-
     const totalSliderItems = sliderContainer.childElementCount - totalSliderVisibleItems;
 
     let currentSlidePos = 0;
 
-    /**
-     * NEXT SLIDE
-     */
     const slideNext = function () {
-
       currentSlidePos++;
+      updateSliderPosition();
+    };
 
+    const slidePrev = function () {
+      currentSlidePos--;
+      updateSliderPosition();
+    };
+
+    const updateSliderPosition = function () {
       sliderContainer.style.transform = `translateX(-${sliderContainer.children[currentSlidePos].offsetLeft}px)`;
 
-      if (currentSlidePos >= totalSliderItems) sliderNextBtn.setAttribute("disabled", "");
-      sliderPrevBtn.removeAttribute("disabled");
+      if (currentSlidePos >= totalSliderItems) {
+        sliderNextBtn.setAttribute("disabled", "");
+      } else {
+        sliderNextBtn.removeAttribute("disabled");
+      }
 
-    }
+      if (currentSlidePos <= 0) {
+        sliderPrevBtn.setAttribute("disabled", "");
+      } else {
+        sliderPrevBtn.removeAttribute("disabled");
+      }
+    };
 
     sliderNextBtn.addEventListener("click", slideNext);
-
-    /**
-     * PREVIOUS SLIDE
-     */
-    const slidePrev = function () {
-
-      currentSlidePos--;
-
-      sliderContainer.style.transform = `translateX(-${sliderContainer.children[currentSlidePos].offsetLeft}px)`;
-
-      if (currentSlidePos <= 0) sliderPrevBtn.setAttribute("disabled", "");
-      sliderNextBtn.removeAttribute("disabled");
-
-    }
-
     sliderPrevBtn.addEventListener("click", slidePrev);
 
     const dontHaveExtraItem = totalSliderItems <= 0;
-    if (dontHaveExtraItem) sliderNextBtn.setAttribute("disabled", "");
+    if (dontHaveExtraItem) {
+      sliderNextBtn.setAttribute("disabled", "");
+    }
 
     sliderPrevBtn.setAttribute("disabled", "");
-  }, [])
+  }, []);
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
+      const timeline = gsap.timeline();
 
-      gsap.set(".slider-item ", {
-        opacity:0,
-        x: -40,
-      });
-
-      gsap.set(".slider-item .img-cover", {
-        width: 0,
-      });
-      gsap.set(".head-card p", {
+      timeline.set(".slider-item ", {
         opacity: 0,
-        x: -20,
-      });
-      gsap.to(".slider-item ", {
-        opacity:1,
-        x:0,
-        duration: 0.2,
-        delay: 3.3,
-        ease: 'sine.out',
-      });
-      gsap.to(".slider-item .img-cover", {
-        width: "100%",
-        duration: 0.2,
-        delay: 3.6,
-        ease: 'sine.out',
-      });
-      gsap.to(".head-card p", {
-        opacity: 1,
-        x: 0,
-        duration: 0.3,
-        delay: 3.9,
-        ease: 'sine.out',
-      });
-    })
+        x: -40,
+      })
+        .set(".slider-item .img-cover", {
+          width: 0,
+        })
+        .set(".head-card p", {
+          opacity: 0,
+          x: -20,
+        })
+        .to(".slider-item ", {
+          opacity: 1,
+          x: 0,
+          duration: 0.2,
+          delay: 3.3,
+          ease: 'sine.out',
+        })
+        .to(".slider-item .img-cover", {
+          width: "100%",
+          duration: 0.2,
+          delay: 3.6,
+          ease: 'sine.out',
+        })
+        .to(".head-card p", {
+          opacity: 1,
+          x: 0,
+          duration: 0.3,
+          delay: 3.9,
+          ease: 'sine.out',
+        });
+    });
+
     return () => context.revert();
-  }, [])
+  }, []);
 
   const sliderdata = [
     {
@@ -161,8 +163,8 @@ const Slider = () => {
   ]
 
   return (
-    <div className="slider card-slider" data-slider >
-      <div className="slider-container" data-slider-container>
+    <div className="slider card-slider" data-slider ref={currentSliderRef} >
+      <div className="slider-container" data-slider-container ref={sliderContainerRef}>
         {
           sliderdata.map((card, index) => (
             <div className="slider-item" key={index}>
@@ -194,11 +196,11 @@ const Slider = () => {
         }
 
       </div>
-      <button className="btn-icon slider-control prev" data-slider-prev>
+      <button className="btn-icon slider-control prev" data-slider-prev ref={sliderPrevBtnRef}>
         <svg height={40} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier" strokeWidth={0} /><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" /><g id="SVGRepo_iconCarrier"> <path d="M14.9991 19L9.83911 14C9.56672 13.7429 9.34974 13.433 9.20142 13.0891C9.0531 12.7452 8.97656 12.3745 8.97656 12C8.97656 11.6255 9.0531 11.2548 9.20142 10.9109C9.34974 10.567 9.56672 10.2571 9.83911 10L14.9991 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /> </g></svg>
       </button>
 
-      <button className="btn-icon slider-control next" data-slider-next>
+      <button className="btn-icon slider-control next" data-slider-next ref={sliderNextBtnRef}>
         <svg height={40} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" stroke="#fff"><g id="SVGRepo_bgCarrier" strokeWidth={0} /><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" /><g id="SVGRepo_iconCarrier"> <path d="M14.9991 19L9.83911 14C9.56672 13.7429 9.34974 13.433 9.20142 13.0891C9.0531 12.7452 8.97656 12.3745 8.97656 12C8.97656 11.6255 9.0531 11.2548 9.20142 10.9109C9.34974 10.567 9.56672 10.2571 9.83911 10L14.9991 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /> </g></svg>
       </button>
 

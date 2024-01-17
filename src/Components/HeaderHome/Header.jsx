@@ -6,52 +6,14 @@ import Search from '../Ui/Search'
 const Header = ({ setmobileNavActive, mobileNavActive }) => {
     useLayoutEffect(() => {
         const context = gsap.context(() => {
-            const tl = gsap.timeline();
-            tl.from(".header-main form", {
-                opacity: 0,
-                x: -100,
-                duration: 0.7,
-                delay: 2,
-                ease: 'sine.out',
-            }).from(".chips .chip-main", {
-                opacity: 0,
-                x: -10,
-                duration: 0.4,
-                stagger: 0.06,
-                ease: 'sine.out',
-                delay: -0.2
-            }).from(".card .img", {
-                opacity: 0,
-                x: -10,
-                duration: 0.2,
-                stagger: 0.06,
-                ease: 'sine.out',
-                delay: -0.1
-            }).from(".card .h1", {
-                opacity: 0,
-                y: -10,
-                duration: 0.2,
-                stagger: 0.06,
-                ease: 'sine.out',
-                delay: -0.1
-            }).from(".card .p", {
-                opacity: 0,
-                y: -10,
-                duration: 0.2,
-                stagger: 0.06,
-                ease: 'sine.out',
-                delay: -0.1
-            }).from(".card .arrow", {
-                opacity: 0,
-                y: -10,
-                duration: 0.2,
-                stagger: 0.06,
-                ease: 'sine.out',
-                delay: -0.1
-            })
-        })
+          const tl = gsap.timeline();
+          tl.from(".header-main form", { opacity: 0, x: -100, duration: 0.7, delay: 2, ease: 'sine.out' })
+            .from(".chips .chip-main", { opacity: 0, x: -10, duration: 0.4, stagger: 0.06, ease: 'sine.out', delay: -0.2 })
+            .from(".card .img, .card .h1, .card .p, .card .arrow", { opacity: 0, y: -10, duration: 0.2, stagger: 0.06, ease: 'sine.out', delay: -0.1 });
+        });
+    
         return () => context.revert();
-    }, [])
+      }, []);
 
     return (
         <div className='header-main'>
