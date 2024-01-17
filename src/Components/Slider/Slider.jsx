@@ -57,24 +57,36 @@ const Slider = () => {
   useLayoutEffect(() => {
     const context = gsap.context(() => {
 
+      gsap.set(".slider-item ", {
+        opacity:0,
+        x: -40,
+      });
+
       gsap.set(".slider-item .img-cover", {
         width: 0,
       });
       gsap.set(".head-card p", {
-        x: -20,
         opacity: 0,
+        x: -20,
+      });
+      gsap.to(".slider-item ", {
+        opacity:1,
+        x:0,
+        duration: 0.2,
+        delay: 3.3,
+        ease: 'sine.out',
       });
       gsap.to(".slider-item .img-cover", {
         width: "100%",
         duration: 0.2,
-        delay: 3,
+        delay: 3.6,
         ease: 'sine.out',
       });
       gsap.to(".head-card p", {
         opacity: 1,
         x: 0,
         duration: 0.3,
-        delay: 3.3,
+        delay: 3.9,
         ease: 'sine.out',
       });
     })

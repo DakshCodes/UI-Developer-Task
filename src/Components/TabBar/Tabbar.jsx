@@ -9,7 +9,7 @@ const Tabbar = () => {
                 opacity: 0,
                 y: 10,
                 duration: 0.2,
-                delay: 2.9,
+                delay: 3,
                 ease: 'sine.out',
             }).from(".radio-inputs label", {
                 opacity: 0,
@@ -19,7 +19,7 @@ const Tabbar = () => {
                 ease: 'sine.out',
             }).from(".divider", {
                 width: 0,
-                duration: 2,
+                duration: 1,
                 ease: 'sine.out',
             })
         })

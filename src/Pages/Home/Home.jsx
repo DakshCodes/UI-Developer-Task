@@ -1,5 +1,6 @@
 import React from 'react'
 import AuctionSection from '../../Components/AuctionSection/AuctionSection'
+import Featured from '../../Components/Featured/Featured'
 import Header from '../../Components/HeaderHome/Header'
 import MobileNav from '../../Components/MobileNav/MobileNav'
 import SearchTab from '../../Components/SearchTab/SearchTab'
@@ -26,6 +27,7 @@ const Home = ({ setmobileNavActive, mobileNavActive }) => {
       <div className="search-section">
         <SearchTab />
       </div>
+      <Featured />
     </div>
   )
 }

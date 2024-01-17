@@ -37,13 +37,12 @@ const SearchTab = () => {
                     ))}
                 </div>
                 <div className='tab-content'>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((tabNumber) => (
+                    {[1].map((tabNumber) => (
                         <div
                             key={tabNumber}
-                            className={`tab-content ${activeTab === tabNumber ? 'active' : ''}`}
+                            className={`tab-content`}
                         >
                             <SearchSlider />
-                            {/* <Slider /> */}
                         </div>
                     ))}
                 </div>

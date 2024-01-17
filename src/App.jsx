@@ -6,6 +6,7 @@ import MainLayout from './Layouts/MainLayout/MainLayout'
 import Lenis from '@studio-freight/lenis'
 import Home from './Pages/Home/Home'
 import MobileNav from './Components/MobileNav/MobileNav'
+import Featured from './Components/Featured/Featured'
 
 const App = () => {
   const [loading, setloading] = useState(true)
@@ -33,7 +34,6 @@ const App = () => {
       <div id='main'>
         {/* SideNav Is Fixed */}
         <Sidenav />
-
         {/* Routes */}
         {/* Home Route */}
         <MainLayout>
