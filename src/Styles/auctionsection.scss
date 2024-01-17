@@ -2,10 +2,16 @@
 
 .aution-main {
     height: max-content;
+    margin: auto;
     width: max-content;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    // border: 1px solid red;
+
+    @media (max-width:1480px) {
+        width: 100%;
+    }
 
     .auction-head {
         height: max-content;
@@ -17,7 +23,8 @@
 
         .auction-title {
             color: $white;
-            font-size: 1vmax;
+            // font-size: 1vmax;
+            font-size: 1.04rem;
 
         }
 
@@ -37,6 +44,12 @@
         height: max-content;
         display: flex;
         justify-content: space-between;
+
+
+        @media (max-width:1080px) {
+            justify-content: center;
+        }
+
         align-items: center;
         flex-wrap: wrap;
         gap: 2.3rem;
@@ -171,6 +184,7 @@
                 font-size: 1.7vmax;
 
             }
+
             .auction-arrow {
                 font-size: 1rem;
             }
@@ -185,19 +199,20 @@
             gap: 4rem;
 
             .aution-card {
-                width: 45vmax;
-                height: 35vmax;
+                width: 50vmax;
+                height: 40vmax;
 
                 .auction-time {
                     gap: 4rem;
+
                     .dates {
                         display: flex;
                         flex-direction: column;
                         color: $white;
                         letter-spacing: 0.08em;
                         height: 40px !important;
-                        
-                        svg{
+
+                        svg {
                             display: none;
                         }
                     }
@@ -234,16 +249,18 @@
 
         }
     }
+
     @media (max-width:360px) {
         .auction-cards {
             justify-content: center;
 
             .aution-card {
-                width: 35vmax;
-                height: 25vmax;
+                width: 45vmax;
+                height: 35vmax;
 
                 .auction-time {
                     gap: 3rem;
+
                     .dates {
                         height: 50px !important;
                     }

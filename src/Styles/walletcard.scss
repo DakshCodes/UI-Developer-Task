@@ -2,6 +2,13 @@
 
 
 
+.aution-main:nth-of-type(2) {
+    width: max-content;
+
+    @media (max-width:1080px) {
+        margin-top: 4rem;
+    }
+}
 
 .wallet-card {
     width: 420px;
