@@ -10,7 +10,9 @@ const images = [
     "https://i.pinimg.com/736x/f0/ed/24/f0ed2409940b8b99ba0a945e5a3d171c.jpg",
     "https://i.pinimg.com/736x/a6/3e/83/a63e83d9b867b14183b947312788e420.jpg",
     "https://i.pinimg.com/564x/a0/9d/ae/a09daee11bf2f690437b7b1771dbf0be.jpg",
-    "https://i.pinimg.com/564x/35/5b/03/355b0369b4f683a98037acdd357d8e30.jpg"
+    "https://i.pinimg.com/564x/35/5b/03/355b0369b4f683a98037acdd357d8e30.jpg",
+    "https://i.pinimg.com/564x/11/33/b6/1133b6a7bafe6d158c82400cc2c1ce15.jpg",
+    "https://i.pinimg.com/736x/c3/46/5a/c3465a4de919f02243b2cfe220cea4fd.jpg",
 ];
 
 const Featured = () => {
@@ -43,11 +45,11 @@ const Featured = () => {
             y: 0,
             stagger: 0.2,
             duration: 0.4,
-            delay: 0.5,
+            delay: 0.2,
             ease: 'sine.out',
             scrollTrigger: {
                 trigger: ".grid-item",
-                start: "top 80%",
+                start: "-10% 80%",
                 end: "bottom 50%",
                 scrub: true
             }
