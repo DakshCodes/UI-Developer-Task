@@ -60,7 +60,7 @@ const Featured = () => {
         <div className='featured-main'>
             <header className="header">
                 <div className="content">
-                    <h1 className="title">Featured</h1>
+                    <h1 className="title">Featured NFT Products</h1>
                 </div>
             </header>
             <div className="container">

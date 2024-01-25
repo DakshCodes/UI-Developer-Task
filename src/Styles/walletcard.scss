@@ -78,6 +78,9 @@
                 display: flex;
                 align-items: center;
                 gap: 0.7rem;
+                @media (max-width:303px) {
+                    gap: 0.3rem;
+                }
 
                 svg {
                     background-color: #fff;
@@ -229,25 +232,41 @@
         padding-bottom: 15px;
         height: max-content;
         gap: 1.5rem;
+        
+
 
         .walletbox-1 {
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .walletbox-2 {
             .earinings {
                 gap: 0.9rem;
+                @media (max-width:303px) {
+                    gap: 0.5rem;
+                }
 
                 .earn-head {
                     gap: 0.8rem;
+                    @media (max-width:303px) {
+                        gap: 0.5rem;
+                    }
 
                 }
 
                 .spend {
                     font-size: 1.8vmax;
 
+                    @media (max-width:303px) {
+                        font-size: 1.3vmax;
+                    }
+
                     span {
                         font-size: 1.5vmax;
+
+                        @media (max-width:303px) {
+                            font-size: 1.3vmax;
+                        }
                     }
                 }
 
@@ -256,12 +275,29 @@
             .spendings {
                 gap: 0.9rem;
 
+                @media (max-width:303px) {
+                    gap: 0.5rem;
+
+                    .spend {
+                        font-size: 1.8vmax;
+
+                        span {
+                            font-size: 1.3vmax;
+                        }
+                    }
+                }
 
                 .spend {
                     font-size: 1.8vmax;
+                    @media (max-width:303px) {
+                        font-size: 1.4vmax;
+                    }
 
                     span {
                         font-size: 1.5vmax;
+                        @media (max-width:303px) {
+                            font-size: 1.5vmax;
+                        }
                     }
                 }
 
